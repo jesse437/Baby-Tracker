@@ -31,19 +31,24 @@ def main():
         
     
         if activity == "a":
-            log_event("sleep_start")
+            if log_event("sleep_start"):
+                print("Logged: sleep_start")
         elif activity == "b":
-            log_event("sleep_end")
+            if log_event("sleep_end"):
+                print("Logged: sleep_end")
         elif activity == "c":
-            log_event("feed")
+            if log_event("feed"):
+                print("Logged: fed")
         elif activity == "d":
-            log_event("diaper")
+            if log_event("diaper"):
+                print("Logged: diaper changed")
         elif activity == "e":
-            log_event("burp")
+            if log_event("burp"):
+                print("Logged: burp")
         elif activity == "f":
             view_log()
         elif activity == "g":
-            print("quit")
+            print("Goodbye!")
             break
         else:
             print("Invalid entry")
