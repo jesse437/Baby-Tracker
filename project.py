@@ -3,18 +3,16 @@ import os
 from datetime import datetime
 
 def main():
-    
+    """Runs baby tracker program"""
     print("Baby Tracker")
     
     while True:
-        
-        try:
-            date = input("Enter today's date (YYYY-MM-DD): ")
-            date_object = datetime.strptime(date, "%Y-%m-%d")
-            print("You entered:", date_object.strftime("%B %d, %Y"))
+        date = input("Enter today's date (YYYY-MM-DD): ")
+        date_object = validate_date(date)
+        if date_object:
+            print("Today is:", date_object.strftime("%B %d, %Y"))
             break
-                
-        except ValueError:
+        else:
             print("Invalid Entry")
             
     while True:
@@ -29,7 +27,7 @@ def main():
         
         activity = input("Enter selection: ").lower()
         
-    
+        
         if activity == "a":
             if log_event("sleep_start"):
                 print("Logged: sleep_start")
@@ -52,6 +50,13 @@ def main():
             break
         else:
             print("Invalid entry")
+            
+def validate_date(date):
+    """Return a datetime object if date is valid YYYY-MM-DD, otherwise None."""
+    try:
+        return datetime.strptime(date, "%Y-%m-%d")
+    except ValueError:
+        return None
         
 
 def log_event(event, filename="baby_log.csv"):
@@ -67,6 +72,7 @@ def log_event(event, filename="baby_log.csv"):
     
 
 def view_log(filename="baby_log.csv"):
+    """Print every logged event, or a message if the log doesn't exist yet."""
     if not os.path.exists(filename):
         print("No logs yet")
         return
@@ -75,12 +81,8 @@ def view_log(filename="baby_log.csv"):
         reader = csv.DictReader(file)
         for row in reader:
             print(f"time: {row['time']} - {row['event']}")
+    return
             
-        
-            
-        
-    
-    
 
 if __name__ == "__main__":
     main()
