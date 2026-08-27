@@ -81,7 +81,7 @@ def view_log(filename="baby_log.csv"):
         reader = csv.DictReader(file)
         for row in reader:
             print(f"time: {row['time']} - {row['event']}")
-    return
+    
             
 
 if __name__ == "__main__":
