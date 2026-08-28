@@ -1,9 +1,9 @@
 # 1. # Baby-Tracker
 
-# 2. ## Tracks baby's nap, feeding, diaper, and burp
+# 2. # Tracks baby's nap, feeding, diaper, and burp
 
 
-# 3. #### Description:
+# 3. ### Description:
 
 #### This project comes with two files project.py and test_project.py. With project.py we find four functions. At the very top we have main and this function runs the entire program. Then we have validate_date that return a datetime object if valid if not, returns None. The next file, log_event appends one timestamped event to the csv file. Last we have view_log that prints every logged event.
 
@@ -18,7 +18,7 @@ python project.py
 
 # 5. Visuals
 
-![alt text](<Screenshot 2026-08-27 at 9.37.03 PM>)
+![Baby Tracker menu]("Screenshot 2026-08-27 at 9.37.03 PM.png")
 
 
 # 6. Collaborators
@@ -30,3 +30,8 @@ python project.py
 # 7. Technologies Used
 
 - Python
+
+
+# 8. License
+
+### The MIT License (MIT)
