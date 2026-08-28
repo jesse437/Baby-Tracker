@@ -18,7 +18,7 @@ python project.py
 
 # 5. Visuals
 
-![Baby Tracker menu]("Screenshot 2026-08-27 at 9.37.03 PM")
+![alt text](<Screenshot 2026-08-27 at 9.37.03 PM.png>)
 
 
 # 6. Collaborators
